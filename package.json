@@ -1,0 +1,19 @@
+{
+  "name": "projeto-nodejs-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasRochaAlmeida/projeto-nodejs-rest.git"
+  },
+  "author": "Lucas Rocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasRochaAlmeida/projeto-nodejs-rest/issues"
+  },
+  "homepage": "https://github.com/LucasRochaAlmeida/projeto-nodejs-rest#readme"
+}
