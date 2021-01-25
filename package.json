@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/LucasRochaAlmeida/projeto-nodejs-rest#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "consign": "^0.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
