@@ -2,6 +2,8 @@ const moment = require('moment')
 const conexao = require('../infraestrutura/conexao')
 
 class Atendimento{
+
+
     adiciona(atendimento, res){
         const dataDeCriacao = moment().format('YYYY-MM-DD HH:MM:SS')
         const data = moment(atendimento.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
@@ -36,7 +38,7 @@ class Atendimento{
                 if(erro){
                     res.status(400).json(erro)
                 } else{
-                res.status(201).json(resultados)
+                res.status(201).json(atendimento)
             }
         } )
 
@@ -69,6 +71,34 @@ class Atendimento{
                 res.status(200).json(atendimento)
             }
         } )
+    }
+
+    altera(id, valores, res){
+
+        if(valores.data){
+            valores.data = moment(atendimento.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
+        }
+        const sql = 'UPDATE Atendimentos SET ? WHERE id=?'
+
+        conexao.query(sql, [valores, id], (erro, resultados) => {
+            if(erro){
+                res.status(400).json(erro)
+            } else{
+                res.status(200).json(resultados)
+            }
+        })
+    }
+
+    deleta(id, res){
+        const sql = 'DELETE FROM Atendimentos WHERE id=?'
+
+        conexao.query(sql, id, (erro, resultados) =>{
+            if(erro){
+                res.status(400).json(erro)
+           } else{
+               res.status(200).json({...valores, id})
+           }
+        })
     }
 
 }
